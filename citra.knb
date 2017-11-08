@@ -1,0 +1,36 @@
+% Citra.knb - a sample vacation reccomendation system for use with the
+% Easyexpert shell. --- written by Kittisak
+% top_goal_lotion where Native starts the inference.
+
+top_goal(X):- citra(X).
+
+citra(citra_pearly_white_uv_lotion):- texture(lotion),usage(lightening),ingredient(pearl). 
+
+citra(citra_pearly_white_uv_extra_lotion):- texture(lotion),usage(uv_protection),ingredient(pearl).
+
+citra(citra_nourished_white_lotion):- texture(lotion),usage(lightening),ingredient(honeycomb_cells). 
+
+citra(citra_sun_protected_white_lotion):- texture(lotion),usage(uv_protection_spf20),ingredient(india_almond_oil). 
+
+citra(citra_light_touch_white_lotion):- texture(lotion),usage(lightening),ingredient(wakame_seaweed),form(gel).
+
+
+
+citra(citra_night_whitening_lotion):- texture(lotion),usage(repairing_at_night),ingredient(india_grapeseed_oil). 
+
+citra(citra_pearly_white_uv_nutri_serum):- texture(serum),usage(lightening),ingredient(pearl).
+
+citra(citra_sun_protected_white_nutri_serum):- texture(serum),usage(uv_protection_spf30),ingredient(india_almond_oil).
+
+citra(citra_light_touch_white_nutri_serum):- texture(serum),usage(lightening),ingredient(wakame_seaweed),form(gel).
+
+
+
+texture(X):- menuask(texture,X,[lotion,serum]). 
+usage(X):- menuask(usage,X,[lightening,uv_protection,uv_protection_spf20,repairing_at_night,uv_protection_spf30]).
+ingredient(X):- menuask(ingredient,X,[pearl,honeycomb_cells,india_almond_oil,wakame_seaweed]).
+form(X):- menuask(form,X,[gel]).
+
+
+
+
